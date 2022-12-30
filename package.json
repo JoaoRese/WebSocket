@@ -1,18 +1,24 @@
 {
   "name": "websocket",
   "version": "1.0.0",
-  "description": "tentativa de websocket",
-  "main": "main.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoaoRese/WebSocket.git"
   },
-  "author": "Joao/Gabriel",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JoaoRese/WebSocket/issues"
   },
-  "homepage": "https://github.com/JoaoRese/WebSocket#readme"
+  "homepage": "https://github.com/JoaoRese/WebSocket#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.11.0"
+  }
 }
