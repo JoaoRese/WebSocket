@@ -1,8 +1,14 @@
-let counterText = document.getElementById("counter")
+const http = require('http');
 
-var counter = 0
+const hostname = '127.0.0.1';
+const port = 3000;
 
-function count() {
-  counter++
-  counterText.innerHTML = counter
-}
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
