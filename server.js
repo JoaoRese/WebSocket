@@ -8,12 +8,17 @@ const wsServer = new ws.Server({
     path : '/'
 })
 
-wsServer.on('connection', (e)=>{
-    console.log('Alguém Conectou');
+let clients = [];
+wsServer.on('connection', (e, req)=>{
+    clients.push(e);
+    ip = req.socket.remoteAddress;
+    console.log('Alguém Conectou, Ip: ' + ip);
     e.on('message', (msg)=>{
         console.log('Chegou mensagem: ' + msg)
 
-        e.send(msg.data)
+        clients.forEach(ws => {
+            ws.send(msg.origin + ' disse: '+msg);
+        });
     })
 
 })
